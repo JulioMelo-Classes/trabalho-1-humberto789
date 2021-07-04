@@ -126,7 +126,7 @@ vector<float> Servicos::gerarTabela( int tamanho ){
 vector<unsigned short int> Servicos::gerarNumerosAleatorios( void ){
   vector<unsigned short int> resultado;
   for(int i = 0; i < 20; i++){
-    resultado.push_back(rand()%(100-0+1) + 0);
+    resultado.push_back(rand()% 80 + 1);
   }
   return resultado;
 }
@@ -160,6 +160,6 @@ bool Servicos::verificaArquivo(vector<unsigned short int> dados_arquivo, float s
 
   }else{
     return true;
-    
+
   }
 }
