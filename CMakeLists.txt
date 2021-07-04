@@ -14,7 +14,10 @@ include_directories( include )
 
 # Cria um executável com nome "run_tests", adiciona neste executável os arquivos do test manager e o seu main.cpp
 add_executable( Keno
+                src/Arquivo.cpp
                 src/KenoBet.cpp
-                src/main.cpp )
+                src/Servicos.cpp
+                src/main.cpp
+                 )
 
 # The end
