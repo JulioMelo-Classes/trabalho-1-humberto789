@@ -64,12 +64,12 @@ int main( int argc, char *argv[] ){
         }else{
 
           cout << "......................................................" << endl;
-          cout << ">>> Aposta lida com sucesso" << endl;
-          cout << "    Você apostará um total de $" << saldo_arquivo << " créditos" << endl;
+          cout << ">>> Aposta lida com sucesso!" << endl;
+          cout << "    Você apostará um total de $" << saldo_arquivo << " créditos." << endl;
 
           float valor_por_rodada = saldo_arquivo/qtd_apostas_arquivo;
 
-          cout << "    Jogará um total de " << qtd_apostas_arquivo << " rodadas, apostando $" << valor_por_rodada << " créditos por rodada" << endl;
+          cout << "    Jogará um total de " << qtd_apostas_arquivo << " rodadas, apostando $" << valor_por_rodada << " créditos por rodada\n" << endl;
           cout << "    Sua aposta tem " << apostas_arquivo.size() << " números, eles são [ ";
 
           for(int i = 0; i < apostas_arquivo.size(); i++){
@@ -142,12 +142,12 @@ int main( int argc, char *argv[] ){
 
           cout << endl;
           cout << "======= Sumário =======" << endl;
-          cout << ">>> Você gastou um total de $" << saldo_arquivo << "créditos " << endl;
+          cout << ">>> Você gastou um total de $" << saldo_arquivo << " créditos " << endl;
 
           float lucro = keno.get_saldo() - saldo_arquivo;
 
-          cout << "Hooray! você ganhou $"<< lucro << "créditos!" << endl;
-          cout << "Você está saindo do jogo com um total de $" << keno.get_saldo() << "créditos." << endl;
+          cout << ">>> Hooray! você ganhou $"<< lucro << " créditos!" << endl;
+          cout << ">>> Você está saindo do jogo com um total de $" << keno.get_saldo() << " créditos." << endl;
         }
     }
   }
