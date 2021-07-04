@@ -130,3 +130,36 @@ vector<unsigned short int> Servicos::gerarNumerosAleatorios( void ){
   }
   return resultado;
 }
+
+//Valida os dados do arquivo de apostas
+bool Servicos::verificaArquivo(vector<unsigned short int> dados_arquivo, float saldo, int num_apostas){
+
+  //Verifica se algúm número ultrapassa o range
+  for(int i = 0; i < dados_arquivo.size(); i++){
+      if(dados_arquivo[i] < 1 || dados_arquivo[i] > 80){
+        cout << "ERRO! Os números devem estar entre 1 e 80!" << endl;
+        return false;
+      }
+  }
+
+  if(saldo <= 0){
+    cout << "ERRO! Por favor, informe na linha 1 do arquivo um saldo valido!" << endl;
+    return false;
+
+  }else if(num_apostas <= 0){
+    cout << "ERRO! Por favor, informe na linha 2 do arquivo uma quantidade de apostas validas!" << endl;
+    return false;
+
+  }else if(dados_arquivo.size() == 0){
+    cout << "ERRO! Por favor, informe na linha 3 os numeros que você quer apostar!" << endl;
+    return false;
+
+  }else if(dados_arquivo.size() > 15){
+    cout << "ERRO! Você só pode escolher no máximo 15 números para apostar" << endl;
+    return false;  
+
+  }else{
+    return true;
+    
+  }
+}

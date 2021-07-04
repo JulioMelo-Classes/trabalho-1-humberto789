@@ -13,6 +13,7 @@ class Servicos{
         vector<unsigned short int> gerarNumerosAleatorios( void );
         bool stringIsInteger(const string& str);
         bool stringIsFloat(const string& str);
+        bool verificaArquivo(vector<unsigned short int> dados_arquivo, float saldo, int num_apostas);
 };
 
 #endif

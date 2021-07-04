@@ -50,19 +50,10 @@ int main( int argc, char *argv[] ){
         //Pegando Apostas
         apostas_arquivo = servicos.transformarLinhaArquivoEmInteiros(linha[2]);
 
-        if(saldo_arquivo <= 0){
-          cout << "    Por favor informe na linha 1 do arquivo um saldo valido " << endl;
-
-        }else if(qtd_apostas_arquivo <= 0){
-          cout << "    Por favor informe na linha 2 do arquivo uma quantidade de apostas validas" << endl;
-
-        }else if(apostas_arquivo.size() == 0){
-          cout << "    Por favor informe na linha 3 os numeros que você quer apostar" << endl;
-
-        }else if(apostas_arquivo.size() > 15){
-          cout << "    Você só pode escolher no máximo 15 números para apostar" << endl;
+        if(servicos.verificaArquivo(apostas_arquivo, saldo_arquivo, qtd_apostas_arquivo) == false){
+          cout << "Corriga o erro acima e tente novamente!" << endl;
+          
         }else{
-
           cout << "......................................................" << endl;
           cout << ">>> Aposta lida com sucesso!" << endl;
           cout << "    Você apostará um total de $" << saldo_arquivo << " créditos." << endl;
@@ -152,5 +143,3 @@ int main( int argc, char *argv[] ){
     }
   }
 }
-
-
