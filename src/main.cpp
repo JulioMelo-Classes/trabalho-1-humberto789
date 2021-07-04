@@ -52,7 +52,7 @@ int main( int argc, char *argv[] ){
 
         if(servicos.verificaArquivo(apostas_arquivo, saldo_arquivo, qtd_apostas_arquivo) == false){
           cout << "Corriga o erro acima e tente novamente!" << endl;
-          
+
         }else{
           cout << "......................................................" << endl;
           cout << ">>> Aposta lida com sucesso!" << endl;
@@ -78,7 +78,7 @@ int main( int argc, char *argv[] ){
 
           //Gerando a tabela de valores
 
-          vector<float> tabela = servicos.gerarTabela(qtd_apostas_arquivo);
+          vector<float> tabela = servicos.gerarTabela(apostas_arquivo.size());
 
           cout << "    ----------+-----------" << endl;
           cout << "    Hits      | Retorno" << endl;
