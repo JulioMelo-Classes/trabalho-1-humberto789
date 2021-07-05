@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(Keno VERSION 0.1 LANGUAGES CXX )
 
 # set the compiling flags
-# set ( CMAKE_CXX_FLAGS "-Wall" )
+set ( CMAKE_CXX_FLAGS "-Wall -fsanitize=address" )
 
 #--------------------------------
 # This is for old cmake versions
