@@ -110,7 +110,7 @@ vector<float> Servicos::gerarTabela( int tamanho ){
       resultado.push_back(0); resultado.push_back(0);resultado.push_back(0);resultado.push_back(0.5);resultado.push_back(1);resultado.push_back(2);resultado.push_back(4);resultado.push_back(24);resultado.push_back(72);resultado.push_back(250);resultado.push_back(500);resultado.push_back(2000);resultado.push_back(4000);
       break;
     case 13:
-      resultado.push_back(0); resultado.push_back(0);resultado.push_back(0);resultado.push_back(0.5);resultado.push_back(0.5);resultado.push_back(3);resultado.push_back(4);resultado.push_back(5);resultado.push_back(20);resultado.push_back(80);resultado.push_back(240);resultado.push_back(500);resultado.push_back(3000);resultado.push_back(6000);resultado.push_back(7500);
+      resultado.push_back(0); resultado.push_back(0);resultado.push_back(0);resultado.push_back(0.5);resultado.push_back(0.5);resultado.push_back(3);resultado.push_back(4);resultado.push_back(5);resultado.push_back(20);resultado.push_back(80);resultado.push_back(240);resultado.push_back(500);resultado.push_back(3000);resultado.push_back(6000);
       break;
     case 14:
       resultado.push_back(0); resultado.push_back(0);resultado.push_back(0);resultado.push_back(0.5);resultado.push_back(0.5);resultado.push_back(2);resultado.push_back(3);resultado.push_back(5);resultado.push_back(12);resultado.push_back(50);resultado.push_back(150);resultado.push_back(500);resultado.push_back(1000);resultado.push_back(2000);resultado.push_back(7500);
@@ -158,6 +158,7 @@ bool Servicos::verificaArquivo(vector<unsigned short int> dados_arquivo, float s
   if(dados_arquivo[0] < 1 || dados_arquivo[dados_arquivo.size() - 1] > 80){
     cout << "ERRO! Os números devem estar entre 1 e 80!" << endl;
     return false;
+  
   }
 
   //Verifica se há algum número repetido
@@ -168,7 +169,6 @@ bool Servicos::verificaArquivo(vector<unsigned short int> dados_arquivo, float s
 
     }
   }
-
 
   if(saldo <= 0){
     cout << "ERRO! Por favor, informe na linha 1 do arquivo um saldo valido!" << endl;
