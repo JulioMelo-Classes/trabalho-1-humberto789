@@ -128,8 +128,18 @@ vector<float> Servicos::gerarTabela( int tamanho ){
 //Gera 20 numeros aleatorios de 0 a 100
 vector<unsigned short int> Servicos::gerarNumerosAleatorios( void ){
   vector<unsigned short int> resultado;
+  std::vector<unsigned short int>::iterator it;
+
   for(int i = 0; i < 20; i++){
-    resultado.push_back(rand()% 80 + 1);
+    int num_gerado = rand()% 80 + 1;
+
+    //Evita que haja número repetidos
+    it = std::find (resultado.begin(), resultado.end(), num_gerado);
+
+    if(it == resultado.end())
+      resultado.push_back(num_gerado);
+    else
+      i--;
   }
 
   //Deixa os números em ordem crescente
@@ -149,6 +159,16 @@ bool Servicos::verificaArquivo(vector<unsigned short int> dados_arquivo, float s
     cout << "ERRO! Os números devem estar entre 1 e 80!" << endl;
     return false;
   }
+
+  //Verifica se há algum número repetido
+  for(int i = 0; i < dados_arquivo.size() - 1; i++){
+    if(dados_arquivo[i] == dados_arquivo[i + 1]){
+      cout << "ERRO! Não pode haver números iguais!" << endl;
+      return false;
+
+    }
+  }
+
 
   if(saldo <= 0){
     cout << "ERRO! Por favor, informe na linha 1 do arquivo um saldo valido!" << endl;
