@@ -61,7 +61,7 @@ int main( int argc, char *argv[] ){
           cout << "    Jogará um total de " << qtd_apostas_arquivo << " rodadas, apostando $" << valor_por_rodada << " créditos por rodada\n" << endl;
           cout << "    Sua aposta tem " << apostas_arquivo.size() << " números, eles são [ ";
 
-          for(int i = 0; i < apostas_arquivo.size(); i++){
+          for(unsigned short int i = 0; i < apostas_arquivo.size(); i++){
             cout << apostas_arquivo[i] << " ";
           }
 
@@ -70,7 +70,7 @@ int main( int argc, char *argv[] ){
           KenoBet keno;
           keno.adiciona_aposta(saldo_arquivo);
           
-          for(int i = 0; i < apostas_arquivo.size(); i++){
+          for(unsigned short int i = 0; i < apostas_arquivo.size(); i++){
             keno.adicionar_numero(apostas_arquivo[i]);
           }
 
@@ -80,7 +80,7 @@ int main( int argc, char *argv[] ){
 
           cout << "    ----------+-----------" << endl;
           cout << "    Hits      | Retorno" << endl;
-          for(int i = 0; i < tabela.size(); i++){
+          for(unsigned short int i = 0; i < tabela.size(); i++){
             cout << "    " << i << "         | " << tabela[i] << endl;
           }
           cout << "    ------------------------------------------------------------" << endl;
@@ -95,7 +95,7 @@ int main( int argc, char *argv[] ){
             
             cout << "    Os números sorteados são: [ ";
 
-            for(int i = 0; i < numeros_aleatorios.size(); i++){
+            for(unsigned short int i = 0; i < numeros_aleatorios.size(); i++){
               cout << numeros_aleatorios[i] << " ";
             }
 
@@ -107,7 +107,7 @@ int main( int argc, char *argv[] ){
 
             cout << "    Você acertou os números: [ ";
 
-            for(int i = 0; i < numeros_acertados.size(); i++){
+            for(unsigned short int i = 0; i < numeros_acertados.size(); i++){
               cout << numeros_acertados[i] << " ";
             }
 
