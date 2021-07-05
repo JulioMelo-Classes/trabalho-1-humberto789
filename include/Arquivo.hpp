@@ -11,8 +11,7 @@ class Arquivo{
         string local;
     public:
         Arquivo(string local_);
-        void write_ln(string texto);
-        vector<string> read_lines(int n);
+        bool read_lines(int n, vector<string> &linha);
 };
 
 #endif

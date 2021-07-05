@@ -22,16 +22,14 @@ int main( int argc, char *argv[] ){
   }else{
     cout << ">>> Lendo arquivo de apostas [data/"<< argv[1] << "], por favor aguarde.." << endl;
 
-
-    //Teste para verificar se o arquivo existe
-    if(false){
-      cout << "    Arquivo não encontrado" << endl;
-
-    }else {
-
-        Arquivo arq(argv[1]);
-
-        vector<string> linha = arq.read_lines(3);
+      Arquivo arq(argv[1]);
+      vector<string> linha;
+      
+      //Lê a linha e verifica se o arquivo existe
+      if(!arq.read_lines(3, linha)){
+        cout<<"ERRO! Arquivo não encontrado!"<<endl;
+        cout<<"Verifique se o arquivo está na pasta data!"<<endl;
+      }else{
 
         float saldo_arquivo;
         int qtd_apostas_arquivo;
@@ -139,7 +137,7 @@ int main( int argc, char *argv[] ){
 
           cout << ">>> Hooray! você ganhou $"<< lucro << " créditos!" << endl;
           cout << ">>> Você está saindo do jogo com um total de $" << keno.get_saldo() << " créditos." << endl;
-        }
+      }
     }
   }
 }

@@ -7,25 +7,22 @@ Arquivo::Arquivo(std::string local_){
     local = local_;
 }
 
-void Arquivo::write_ln(std::string texto){
-    ofstream file1;
-    file1.open(local, ios::app);
-    //cout << "texto"<<endl;
-    file1<<texto<<endl;
-    file1.close();
-}
-
-std::vector<std::string> Arquivo::read_lines(int n){
+bool Arquivo::read_lines(int n, vector<string> &linha){
     ifstream file1;
     file1.open("../data/" + local);
-    //cin >> var;
-    std::vector<string> v;
-    for(int i=0; i<n; i++){
-        string texto;
-        getline(file1, texto);
-        v.push_back(texto);
-    }
-    file1.close();
 
-    return v;
+    //Verifica se houve falhar após o .open()
+    if(!file1.fail()){
+      for(int i=0; i<n; i++){
+          string texto;
+          getline(file1, texto);
+          linha.push_back(texto);
+      }
+      file1.close();
+
+      return true;
+    }else{
+
+      return false;
+    }
 }
