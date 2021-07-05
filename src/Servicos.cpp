@@ -58,6 +58,9 @@ vector<unsigned short int> Servicos::transformarLinhaArquivoEmInteiros(string r)
     }
   }
 
+  //Deixa os números em ordem crescente
+  std::sort(resultado.begin(), resultado.end());
+
   return resultado;
 }
 
@@ -128,18 +131,23 @@ vector<unsigned short int> Servicos::gerarNumerosAleatorios( void ){
   for(int i = 0; i < 20; i++){
     resultado.push_back(rand()% 80 + 1);
   }
+
+  //Deixa os números em ordem crescente
+  std::sort(resultado.begin(), resultado.end());
+
   return resultado;
 }
 
 //Valida os dados do arquivo de apostas
 bool Servicos::verificaArquivo(vector<unsigned short int> dados_arquivo, float saldo, int num_apostas){
 
+  //Deixa os números em ordem crescente
+  std::sort(dados_arquivo.begin(), dados_arquivo.end());
+
   //Verifica se algúm número ultrapassa o range
-  for(int i = 0; i < dados_arquivo.size(); i++){
-      if(dados_arquivo[i] < 1 || dados_arquivo[i] > 80){
-        cout << "ERRO! Os números devem estar entre 1 e 80!" << endl;
-        return false;
-      }
+  if(dados_arquivo[0] < 1 || dados_arquivo[dados_arquivo.size() - 1] > 80){
+    cout << "ERRO! Os números devem estar entre 1 e 80!" << endl;
+    return false;
   }
 
   if(saldo <= 0){
