@@ -1,7 +1,7 @@
 # Implementação do Jogo Keno, com interface textual
  Repositório contendo as especificações do Trabalho 1 da disciplina de LP1
 
-# Documentação
+## Documentação
 - Você pode olhar a documentação abrindo o arquivo "Index.html" localizado em > Documentacao/Formato HTML/index.html 
 - Ou se preferir pode olhar diretamente nos arquivos .hpp que estão dentro na pasta "include"
 
