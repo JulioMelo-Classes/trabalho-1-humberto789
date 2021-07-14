@@ -10,6 +10,26 @@
 
 using namespace std;
 
+/*
+Avaliação
+Processamento do Arquivo de Entrada: 0,8 (20% a menos pelo uso da std::sort)
+Execução correta: 0,8
+Interfcace Textual: 0,8
+Documentação: 1
+Compilação automatizada: 1
+Organização em src, include, build, data: 1
+
+Comentários
+- Uma coisa que vocês poderiam melhorar era a classe serviços. Como ela não tem atributos, o melhor era que
+os métodos fossem estáticos. No entanto, acho que, pelo nome, ela está superdimensionada. O que quer dizer
+que vocês poderiam dividir a execução do código em mais classes.
+- Vi que o programa de vocês não abre qualquer arquivo de entrada, apenas queles que estão na pasta data, essa funcionalidade
+não foi pedida, embora não acarrete muitos problemas ela vai contra a especificação. Veja que o programa deveria abrir o arquivo
+dado como argumento e não apenas arquivos em um diretório específico.
+- O uso da std::sort foi proibido no documento de especificação, vocês tinham que implementar algum algoritmo,
+vou tirar pontos por isso 20% da parte de código.
+*/
+
 int main( int argc, char *argv[] ){
 
   srand(time(NULL));
